@@ -176,6 +176,10 @@ def test_datetime_combinations():
                                 now.minute, now.second - 2)
     assert (datetime_diff.datetime_diff(olddate, now) ==
             "2 hours, 2 seconds ago.")
+    olddate = datetime.datetime(now.year, now.month, now.day, now.hour,
+                                now.minute - 2, now.second - 2)
+    assert (datetime_diff.datetime_diff(olddate, now) ==
+            "2 minutes, 2 seconds ago.")
 
 
 def test_datetime_diff():
