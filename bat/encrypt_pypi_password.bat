@@ -1,2 +1,1 @@
-travis login --pro
-travis encrypt --add deploy.password -r AraHaan/datetime_diff
+travis encrypt deploy.password=yourpypipasswordhere -r AraHaan/datetime_diff
