@@ -1,0 +1,14 @@
+pip
+flake8
+pyflakes
+coverage
+cchardet
+sphinx
+chardet
+isort
+pytest
+pytest-cov
+pytest-mock
+pytest-timeout
+pygments
+twine
