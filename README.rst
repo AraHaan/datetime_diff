@@ -1,11 +1,13 @@
+.. image:: https://travis-ci.org/AraHaan/datetime_diff.svg?branch=master
+  :target: https://travis-ci.org/AraHaan/datetime_diff
+.. image:: https://ci.appveyor.com/api/projects/status/vaxfcmgq0uusrkd4?svg=true
+  :target: https://ci.appveyor.com/project/AraHaan/datetime-diff
+.. image:: https://codecov.io/gh/AraHaan/datetime_diff/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/AraHaan/datetime_diff
 .. image:: https://img.shields.io/pypi/v/datetime_diff.svg
    :target: https://pypi.python.org/pypi/datetime_diff/
 .. image:: https://img.shields.io/pypi/pyversions/datetime_diff.svg
    :target: https://pypi.python.org/pypi/datetime_diff/
-.. image:: https://codecov.io/gh/AraHaan/datetime_diff/branch/master/graph/badge.svg
-  :target: https://codecov.io/gh/AraHaan/datetime_diff
-.. image:: https://travis-ci.org/AraHaan/datetime_diff.svg?branch=master
-  :target: https://travis-ci.org/AraHaan/datetime_diff
 
 The ``datetime_diff`` package provides a useful function for comparing
 two different datetime objects and returns the time elapsed since.
