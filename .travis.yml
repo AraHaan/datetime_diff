@@ -1,0 +1,53 @@
+sudo: required
+services:
+  - docker
+
+language: python
+
+python:
+  - 3.4.2
+  - 3.4.3
+  - 3.5.2
+  - 3.5.3
+  - 3.5
+  - 3.6
+  - 'nightly'
+
+os:
+  - linux
+#   - osx   # doesn't work on MacOSX -- the system has no Python installed
+
+matrix:
+  allow_failures:
+    - python: '3.6-dev'
+    - python: 'nightly'
+    - os: osx
+
+cache:
+  directories:
+  - $HOME/.cache/pip
+
+before_cache:
+  - rm -f $HOME/.cache/pip/log/debug.log
+
+install:
+  - sudo apt-get install enchant
+  - pip install --upgrade pip
+  - pip install --upgrade setuptools
+  - pip install codecov
+
+script:
+  - make cov-dev-full
+
+after_success:
+  - codecov
+
+deploy:
+  provider: pypi
+  user: "Decorater"
+  password: "hghnghn"
+  distributions: "sdist bdist_wheel"
+  on:
+    tags: true
+    all_branches: true
+    python: 3.5

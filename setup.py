@@ -1,4 +1,5 @@
 from setuptools import setup
+from setuptools.command.test import test as TestCommand
 
 requirements = []
 
@@ -12,6 +13,16 @@ try:
         readme = f.read()
 except FileNotFoundError:
     readme = ""
+
+
+class PyTest(TestCommand):
+    user_options = []
+
+    def run(self):
+        import subprocess
+        import sys
+        errno = subprocess.call([sys.executable, '-m', 'pytest', 'tests'])
+        raise SystemExit(errno)
 
 setup(name='datetime_diff',
       author='Decorater',
@@ -27,6 +38,9 @@ setup(name='datetime_diff',
       download_url='https://github.com/AraHaan/datetime_diff',
       include_package_data=True,
       install_requires=requirements,
+      tests_require=['pytest', 'flake8', 'pyflakes', 'coverage',
+                     'isort', 'pytest-cov', 'pytest-mock',
+                     'pytest-timeout'],
       platforms='Any',
       classifiers=[
         'Development Status :: 4 - Beta',
@@ -38,6 +52,7 @@ setup(name='datetime_diff',
         'Programming Language :: Python :: 3',
         'Topic :: Software Development :: Libraries',
         'Topic :: Software Development :: Libraries :: Python Modules',
-        'Topic :: Utilities',
-      ]
+        'Topic :: Utilities'
+      ],
+      cmdclass=dict(test=PyTest)
 )
