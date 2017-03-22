@@ -5,8 +5,6 @@ tests datetime_diff package.
 import datetime
 import time
 
-import pytest
-
 import datetime_diff
 
 
