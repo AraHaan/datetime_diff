@@ -11,13 +11,13 @@ import datetime_diff
 def test_years():
     now = datetime.datetime.now()
     olddate = datetime.datetime(now.year - 1, 12, 3, 3, 34, 57, 281000)
-    datetime_diff.datetime_diff(olddate, newnow)
+    datetime_diff.datetime_diff(olddate, now)
 
 
 def test_multiple_years():
     now = datetime.datetime.now()
     olddate = datetime.datetime(now.year - 2, 12, 3, 3, 34, 57, 281000)
-    datetime_diff.datetime_diff(olddate, newnow)
+    datetime_diff.datetime_diff(olddate, now)
 
 
 def test_datetime_diff():
