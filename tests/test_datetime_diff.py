@@ -10,13 +10,13 @@ import datetime_diff
 
 def test_years():
     now = datetime.datetime.now()
-    olddate = datetime.datetime(now.year - 1, 12, 3, 3, 34, 57, 281000)
+    olddate = datetime.datetime(now.year - 1, now.month, now.day, now.hour, now.minute, now.second)
     assert datetime_diff.datetime_diff(olddate, now) == "1 year ago."
 
 
 def test_multiple_years():
     now = datetime.datetime.now()
-    olddate = datetime.datetime(now.year - 2, 12, 3, 3, 34, 57, 281000)
+    olddate = datetime.datetime(now.year - 2, now.month, now.day, now.hour, now.minute, now.second)
     assert datetime_diff.datetime_diff(olddate, now)  == "2 years ago."
 
 
