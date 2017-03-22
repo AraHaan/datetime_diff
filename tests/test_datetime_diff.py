@@ -100,7 +100,7 @@ def test_multiple_seconds():
     """test for datetime_diff."""
     now = datetime.datetime.now()
     olddate = datetime.datetime(now.year, now.month, now.day, now.hour,
-                                now.minute, now.second -2)
+                                now.minute, now.second - 2)
     assert datetime_diff.datetime_diff(olddate, now) == "2 seconds ago."
 
 
