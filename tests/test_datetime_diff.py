@@ -104,6 +104,45 @@ def test_multiple_seconds():
     assert datetime_diff.datetime_diff(olddate, now) == "2 seconds ago."
 
 
+def test_datetime_combinations():
+    """test for datetime_diff."""
+    now = datetime.datetime.now()
+    olddate = datetime.datetime(now.year - 2, now.month, now.day, now.hour,
+                                now.minute, now.second - 2)
+    assert (datetime_diff.datetime_diff(olddate, now) ==
+            "2 years, 2 seconds ago.")
+    olddate = datetime.datetime(now.year - 2, now.month, now.day, now.hour,
+                                now.minute - 2, now.second)
+    assert (datetime_diff.datetime_diff(olddate, now) ==
+            "2 years, 2 minutes ago.")
+    olddate = datetime.datetime(now.year - 2, now.month, now.day, now.hour - 2,
+                                now.minute, now.second)
+    assert datetime_diff.datetime_diff(olddate, now) == "2 years, 2 hours ago."
+    olddate = datetime.datetime(now.year - 2, now.month, now.day - 2, now.hour,
+                                now.minute, now.second)
+    assert datetime_diff.datetime_diff(olddate, now) == "2 years, 2 days ago."
+    olddate = datetime.datetime(now.year - 2, now.month - 2, now.day, now.hour,
+                                now.minute, now.second)
+    assert (datetime_diff.datetime_diff(olddate, now) ==
+            "2 years, 2 months ago.")
+    olddate = datetime.datetime(now.year - 2, now.month - 2, now.day - 2,
+                                now.hour, now.minute, now.second)
+    assert (datetime_diff.datetime_diff(olddate, now) ==
+            "2 years, 2 months, 2 days ago.")
+    olddate = datetime.datetime(now.year - 2, now.month - 2, now.day - 2,
+                                now.hour - 2, now.minute, now.second)
+    assert (datetime_diff.datetime_diff(olddate, now) ==
+            "2 years, 2 months, 2 days, 2 hours ago.")
+    olddate = datetime.datetime(now.year - 2, now.month - 2, now.day - 2,
+                                now.hour - 2, now.minute - 2, now.second)
+    assert (datetime_diff.datetime_diff(olddate, now) ==
+            "2 years, 2 months, 2 days, 2 hours, 2 minutes ago.")
+    olddate = datetime.datetime(now.year - 2, now.month - 2, now.day - 2,
+                                now.hour - 2, now.minute - 2, now.second - 2)
+    assert (datetime_diff.datetime_diff(olddate, now) ==
+            "2 years, 2 months, 2 days, 2 hours, 2 minutes, 2 seconds ago.")
+
+
 def test_datetime_diff():
     """test for datetime_diff."""
     oldnow = datetime.datetime.now()
