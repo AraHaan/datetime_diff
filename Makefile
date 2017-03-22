@@ -38,18 +38,13 @@ vtest: .develop
 cov cover coverage:
 	tox
 
-cov-dev: .develop
-	@echo "Run without extensions"
-	@AIOHTTP_NO_EXTENSIONS=1 py.test --cov=datetime_diff tests
-	@py.test --cov=aiohttp --cov-report=term --cov-report=html --cov-append tests
-        @echo "open file://`pwd`/coverage/index.html"
+# cov-dev: .develop
+#	@echo "Run without extensions"
+#	@AIOHTTP_NO_EXTENSIONS=1 py.test --cov=datetime_diff tests
+#	@py.test --cov=datetime_diff --cov-report=term --cov-report=html --cov-append tests
+ #       @echo "open file://`pwd`/coverage/index.html"
 
 cov-dev-full: .develop
-	@echo "Run without extensions"
-	@AIOHTTP_NO_EXTENSIONS=1 py.test --cov=datetime_diff tests
-	@echo "Run in debug mode"
-	@PYTHONASYNCIODEBUG=1 py.test --cov=datetime_diff --cov-append tests
-	@echo "Regular run"
 	@py.test --cov=datetime_diff --cov-report=term --cov-report=html --cov-append tests
 	@echo "open file://`pwd`/coverage/index.html"
 
