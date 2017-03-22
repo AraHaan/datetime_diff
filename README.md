@@ -1,5 +1,6 @@
 [![PyPI](https://img.shields.io/pypi/v/datetime_diff.svg)](https://pypi.python.org/pypi/datetime_diff/)
 [![PyPI](https://img.shields.io/pypi/pyversions/datetime_diff.svg)](https://pypi.python.org/pypi/datetime_diff/)
+[![codecov](https://codecov.io/gh/AraHaan/datetime_diff/branch/master/graph/badge.svg)](https://codecov.io/gh/AraHaan/datetime_diff)
 
 The ``datetime_diff`` package provides a useful function for comparing two different datetime objects and returns the time elapsed since.
 
