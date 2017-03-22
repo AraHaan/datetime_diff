@@ -32,6 +32,54 @@ def test_multiple_months():
     assert datetime_diff.datetime_diff(olddate, now)  == "2 months ago."
 
 
+def test_days():
+    now = datetime.datetime.now()
+    olddate = datetime.datetime(now.year, now.month, now.day - 1, now.hour, now.minute, now.second)
+    assert datetime_diff.datetime_diff(olddate, now) == "1 day ago."
+
+
+def test_multiple_days():
+    now = datetime.datetime.now()
+    olddate = datetime.datetime(now.year, now.month, now.day - 2, now.hour, now.minute, now.second)
+    assert datetime_diff.datetime_diff(olddate, now)  == "2 days ago."
+
+
+def test_hours():
+    now = datetime.datetime.now()
+    olddate = datetime.datetime(now.year, now.month, now.day, now.hour - 1, now.minute, now.second)
+    assert datetime_diff.datetime_diff(olddate, now) == "1 hour ago."
+
+
+def test_multiple_hours():
+    now = datetime.datetime.now()
+    olddate = datetime.datetime(now.year, now.month, now.day, now.hour - 2, now.minute, now.second)
+    assert datetime_diff.datetime_diff(olddate, now)  == "2 hours ago."
+
+
+def test_minutes():
+    now = datetime.datetime.now()
+    olddate = datetime.datetime(now.year, now.month, now.day, now.hour, now.minute - 1, now.second)
+    assert datetime_diff.datetime_diff(olddate, now) == "1 minute ago."
+
+
+def test_multiple_minutes():
+    now = datetime.datetime.now()
+    olddate = datetime.datetime(now.year, now.month, now.day, now.hour, now.minute - 2, now.second)
+    assert datetime_diff.datetime_diff(olddate, now)  == "2 minutes ago."
+
+
+def test_seconds():
+    now = datetime.datetime.now()
+    olddate = datetime.datetime(now.year, now.month, now.day, now.hour, now.minute, now.second - 1)
+    assert datetime_diff.datetime_diff(olddate, now) == "1 second ago."
+
+
+def test_multiple_seconds():
+    now = datetime.datetime.now()
+    olddate = datetime.datetime(now.year, now.month, now.day, now.hour, now.minute, now.second -2)
+    assert datetime_diff.datetime_diff(olddate, now)  == "2 seconds ago."
+
+
 def test_datetime_diff():
     oldnow = datetime.datetime.now()
     time.sleep(15)
