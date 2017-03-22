@@ -39,6 +39,15 @@ def datetime_diff(datetime_prior, datetime_current):
     elhour = datetime_current.hour - datetime_prior.hour
     elminute = datetime_current.minute - datetime_prior.minute
     elsecond = datetime_current.second - datetime_prior.second
+    total_seconds = int((datetime_current - datetime_prior).total_seconds())
+    if 0 < total_seconds < 60:
+        # lets set things to the correct values now.
+        elyear = 0
+        elmonth = 0
+        elday = 0
+        elhour = 0
+        elminute = 0
+        elsecond = total_seconds
     reply = ""
     if elyear > 0:
         if elyear < 2:
