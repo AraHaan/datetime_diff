@@ -1,0 +1,8 @@
+pytest
+flake8
+pyflakes
+coverage
+isort
+pytest-cov
+pytest-mock
+pytest-timeout
