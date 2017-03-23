@@ -6,6 +6,8 @@
   :target: https://codecov.io/gh/AraHaan/datetime_diff
 .. image:: https://img.shields.io/pypi/v/datetime_diff.svg
    :target: https://pypi.python.org/pypi/datetime_diff/
+.. image:: https://img.shields.io/pypi/dm/datetime_diff.svg
+   :target: https://pypi.python.org/pypi/datetime_diff/
 .. image:: https://img.shields.io/pypi/pyversions/datetime_diff.svg
    :target: https://pypi.python.org/pypi/datetime_diff/
 
